@@ -1,17 +1,19 @@
-import React from "react";
-import { navLink } from "../constants";
-const Navbar = () => {
+import { navLinks } from "../constants";
+
+const NavBar = () => {
   return (
     <header>
       <nav>
-        <img src="/logo.svg" alt="Apple Logo" />
+        <img src="/logo.svg" alt="Apple logo" />
+
         <ul>
-          {navLink.map((link) => (
-            <li key={link.label}>
-              <a href="{link.label}">{link.label}</a>
+          {navLinks.map(({ label }) => (
+            <li key={label}>
+              <a href={label}>{label}</a>
             </li>
           ))}
         </ul>
+
         <div className="flex-center gap-3">
           <button>
             <img src="/search.svg" alt="Search" />
@@ -24,5 +26,4 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;
+export default NavBar;
